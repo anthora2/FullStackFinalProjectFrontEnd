@@ -6,15 +6,18 @@ import reportWebVitals from "./reportWebVitals";
 import Hero from "./components/Hero";
 import Details from "./components/Details";
 import SearchPage from "./components/SearchPage";
-import FilterPage from "./components/FilterPage"
+import FilterPage from "./components/FilterPage";
+import HomePage from "../src/pages/HomePage"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Hero />
+    {/* <Hero />
     <Details />
     {/* <SearchPage /> */}
-    <FilterPage />
+    {/* <FilterPage />  */}
+    {/* <HomePage /> */}
+    <App />
   </React.StrictMode>,
 );
 

@@ -1,4 +1,4 @@
-export default function Dropdown({options }) {
+export default function Dropdown({ options }) {
   return (
     <div className="pt-6">
       <label

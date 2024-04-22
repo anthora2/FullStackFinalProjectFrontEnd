@@ -1,6 +1,6 @@
-import React from 'react';
-import Dropdown from "./Dropdown"
-import Enclave from "../images/berkeley_enclave.jpg"
+import React from "react";
+import Dropdown from "./Dropdown";
+import Enclave from "../images/berkeley_enclave.jpg";
 
 export default function DropdownSection() {
   return (
@@ -14,17 +14,22 @@ export default function DropdownSection() {
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-yellow-300 to-transparent z-[-1]"></div>
-      <h1 className='z-15 text-7xl absolute top-40 left-40 text-white font-extrabold'>Let's Look!</h1>
+      <h1 className="z-15 text-7xl absolute top-40 left-40 text-white font-extrabold">
+        Let's Look!
+      </h1>
 
       <div className="flex flex-wrap justify-center items-center h-full z-15">
         <div className="w-64 h-64 bg-white shadow-md rounded-md m-4 p-4">
           <h3 className="text-lg font-semibold mb-2"> Apartment Type</h3>
-          <Dropdown label="Apartment Type"
-            options={["Single", "Double", "Triple"]} />
+          <Dropdown
+            label="Apartment Type"
+            options={["Single", "Double", "Triple"]}
+          />
         </div>
         <div className="w-64 h-64 bg-white shadow-md rounded-md m-4 p-4">
           <h3 className="text-lg font-semibold mb-2"> Minimum Price</h3>
-          <Dropdown label="Minimum Price"
+          <Dropdown
+            label="Minimum Price"
             options={[
               "$400",
               "$500",
@@ -39,11 +44,13 @@ export default function DropdownSection() {
               "$1400",
               "$1500",
               "$1600",
-            ]} />
+            ]}
+          />
         </div>
         <div className="w-64 h-64 bg-white shadow-md rounded-md m-4 p-4">
           <h3 className="text-lg font-semibold mb-2">Maximum Price</h3>
-          <Dropdown label="Maximum Price"
+          <Dropdown
+            label="Maximum Price"
             options={[
               "$600",
               "$700",
@@ -64,7 +71,8 @@ export default function DropdownSection() {
               "$2200",
               "$2300",
               "$2400",
-            ]} />
+            ]}
+          />
         </div>
         <div className="w-64 h-64 bg-white shadow-md rounded-md m-4 p-4">
           <h3 className="text-lg font-semibold mb-2">Rating</h3>
