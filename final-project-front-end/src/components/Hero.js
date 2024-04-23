@@ -3,8 +3,9 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import BerkeleyWayImage from "../images/berkeley_way.jpg";
 import ApartmentCard from "./ApartmentCard";
-// import SearchBar from './SearchBar'
+import MyLoginComponent from "./LogIn";
 
+// import SearchBar from './SearchBar'
 const navigation = [
   { name: "About", href: "#" },
   { name: "Listings", href: "#" },
@@ -63,6 +64,7 @@ export default function Hero() {
             <a href="#" className="text-sm font-semibold leading-6 text-white">
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
+            <MyLoginComponent />
           </div>
         </nav>
         <Dialog

@@ -2,7 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "../reportWebVitals";
-import Hero from "../components/Hero"
+import Hero from "../components/Hero";
 import Details from "../components/Details";
 import FilterPage from "../components/FilterPage";
 import ApartmentCard from "../components/ApartmentCard";
@@ -13,6 +13,7 @@ import ApartmentGrid from "../components/ApartmentGrid";
 function HomePage() {
   return (
     <div>
+
       <Hero />
       <Details />
       {/* <SearchPage /> */}
