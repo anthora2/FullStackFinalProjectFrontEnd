@@ -11,7 +11,7 @@ export default function Dropdown({ options }) {
   const handleDropdownChange = (event) => {
     const selectedValue = event.target.value;
     setSelectedOption(selectedValue);
-    onSelect(selectedValue); 
+    // onSelect(selectedValue); 
   };
 
   return (
