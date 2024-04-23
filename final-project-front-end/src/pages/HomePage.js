@@ -1,21 +1,13 @@
-// import logo from "./logo.svg";
-// import "./App.css";
 
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-// import "./index.css";
-// import App from "./App";
-// import reportWebVitals from "./reportWebVitals";
-// import Hero from "./components/Hero";
-// import Details from "./components/Details";
-// import SearchPage from "./components/SearchPage";
-// import FilterPage from "./components/FilterPage";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "../reportWebVitals";
 import Hero from "../components/Hero"
 import Details from "../components/Details";
 import FilterPage from "../components/FilterPage";
+import ApartmentCard from "../components/ApartmentCard";
+// import Dropdown from "../components/Dropdown";
+import ApartmentGrid from "../components/ApartmentGrid";
 
 
 function HomePage() {
@@ -24,7 +16,9 @@ function HomePage() {
       <Hero />
       <Details />
       {/* <SearchPage /> */}
-      <FilterPage />
+      {/* <FilterPage /> */}
+      <ApartmentGrid />
+
     </div>
   );
 }

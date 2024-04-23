@@ -1,34 +1,42 @@
 import React from "react";
 import Dropdown from "./Dropdown";
 import Enclave from "../images/berkeley_enclave.jpg";
+import { useState } from 'react'
+import ApartmentCard from "./ApartmentCard";
 
 export default function DropdownSection() {
+  
+  // const handleSelect = (selectedValue) => {
+  //   console.log("Selected value:", selectedValue);
+  //   console.log("this should only trigger when i change the selection ")
+  // };
   const [selectedFilters, setSelectedFilters] = useState({
-    apartmentType: '',
-    minPrice: '',
-    maxPrice: '',
-    rating: ''
+    apartmentType: "",
+    minPrice: "",
+    maxPrice: "",
+    rating: "",
   });
+
+  const handleSelect = (key, value) => {
+    if (selectedFilters.hasOwnProperty(key)) {
+      setSelectedFilters((prevFilters) => ({
+        ...prevFilters,
+        [key]: value,
+      }));
+    }
+  };
 
   const handleApplyFilter = async () => {
     try {
-      const response = await fetch('some api', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(selectedFilters)
-      });
 
-      if (!response.ok) {
-        throw new Error('Failed to apply filter');
-      }
+      const filters = JSON.stringify(selectedFilters)
+      console.log(filters)
 
-      const filteredData = await response.json();
-      window.location.href = `/filtered-results?data=${JSON.stringify(filteredData)}`;
+
     } catch (error) {
-      console.error('Error applying filter:', error.message);
+      console.error("Error applying filter:", error.message);
     }
+
   };
 
 
@@ -53,6 +61,7 @@ export default function DropdownSection() {
           <Dropdown
             label="Apartment Type"
             options={["Single", "Double", "Triple"]}
+            onSelect={(value) => handleSelect("apartmentType", value)}
           />
         </div>
         <div className="w-64 h-64 bg-white shadow-md rounded-md m-4 p-4">
@@ -74,6 +83,8 @@ export default function DropdownSection() {
               "$1500",
               "$1600",
             ]}
+            // onSelect={handleSelect}
+            onSelect={(value) => handleSelect("minPrice", value)}
           />
         </div>
         <div className="w-64 h-64 bg-white shadow-md rounded-md m-4 p-4">
@@ -101,11 +112,14 @@ export default function DropdownSection() {
               "$2300",
               "$2400",
             ]}
+            onSelect={(value) => handleSelect("maxPrice", value)}
           />
         </div>
         <div className="w-64 h-64 bg-white shadow-md rounded-md m-4 p-4">
           <h3 className="text-lg font-semibold mb-2">Rating</h3>
-          <Dropdown label="Ratings" options={["1", "2", "3", "4", "5"]} />
+          <Dropdown label="Ratings" options={["1", "2", "3", "4", "5"]} 
+          onSelect={(value) => handleSelect("rating", value)}
+          />
         </div>
       </div>
 

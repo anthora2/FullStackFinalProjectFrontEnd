@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import BerkeleyWayImage from "../images/berkeley_way.jpg";
+import ApartmentCard from "./ApartmentCard";
 // import SearchBar from './SearchBar'
 
 const navigation = [
