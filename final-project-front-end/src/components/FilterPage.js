@@ -1,36 +1,35 @@
-import React from "react";
+import { React, useState } from "react";
 import Dropdown from "./Dropdown";
 import Enclave from "../images/berkeley_enclave.jpg";
 
 export default function DropdownSection() {
   const [selectedFilters, setSelectedFilters] = useState({
-    apartmentType: '',
-    minPrice: '',
-    maxPrice: '',
-    rating: ''
+    apartmentType: "",
+    minPrice: "",
+    maxPrice: "",
+    rating: "",
   });
 
   const handleApplyFilter = async () => {
     try {
-      const response = await fetch('some api', {
-        method: 'POST',
+      const response = await fetch("some api", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(selectedFilters)
+        body: JSON.stringify(selectedFilters),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to apply filter');
+        throw new Error("Failed to apply filter");
       }
 
       const filteredData = await response.json();
       window.location.href = `/filtered-results?data=${JSON.stringify(filteredData)}`;
     } catch (error) {
-      console.error('Error applying filter:', error.message);
+      console.error("Error applying filter:", error.message);
     }
   };
-
 
   return (
     <div className="relative bg-cover bg-center h-screen relative-h-screen">
@@ -110,9 +109,10 @@ export default function DropdownSection() {
       </div>
 
       <div className="relative">
-        <button 
-        onClick={handleApplyFilter}
-        className="absolute left-1/4 bottom-[230px] bg-blue-800 text-white text-xl font-extrabold py-5 px-10 rounded-full shadow-md hover:bg-blue-900">
+        <button
+          onClick={handleApplyFilter}
+          className="absolute left-1/4 bottom-[230px] bg-blue-800 text-white text-xl font-extrabold py-5 px-10 rounded-full shadow-md hover:bg-blue-900"
+        >
           Apply Filter
         </button>
       </div>
