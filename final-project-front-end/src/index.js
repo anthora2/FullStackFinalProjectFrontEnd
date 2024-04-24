@@ -7,7 +7,7 @@ import Hero from "./components/Hero";
 import Details from "./components/Details";
 import SearchPage from "./components/SearchPage";
 import FilterPage from "./components/FilterPage";
-import HomePage from "../src/pages/HomePage"
+import HomePage from "../src/pages/HomePage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

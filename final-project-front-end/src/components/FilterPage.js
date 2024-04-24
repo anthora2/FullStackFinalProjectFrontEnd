@@ -1,11 +1,10 @@
 // import { React, useState } from "react";
 import Dropdown from "./Dropdown";
 import Enclave from "../images/berkeley_enclave.jpg";
-import { useState } from 'react'
+import { useState } from "react";
 import ApartmentCard from "./ApartmentCard";
 
 export default function DropdownSection() {
-  
   // const handleSelect = (selectedValue) => {
   //   console.log("Selected value:", selectedValue);
   //   console.log("this should only trigger when i change the selection ")
@@ -39,11 +38,9 @@ export default function DropdownSection() {
       if (!response.ok) {
         throw new Error("Failed to apply filter");
       }
-
     } catch (error) {
       console.error("Error applying filter:", error.message);
     }
-
   };
 
   return (
@@ -123,8 +120,10 @@ export default function DropdownSection() {
         </div>
         <div className="w-64 h-64 bg-white shadow-md rounded-md m-4 p-4">
           <h3 className="text-lg font-semibold mb-2">Rating</h3>
-          <Dropdown label="Ratings" options={["1", "2", "3", "4", "5"]} 
-          // onSelect={(value) => handleSelect("rating", value)}
+          <Dropdown
+            label="Ratings"
+            options={["1", "2", "3", "4", "5"]}
+            // onSelect={(value) => handleSelect("rating", value)}
           />
         </div>
       </div>

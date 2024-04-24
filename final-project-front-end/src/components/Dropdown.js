@@ -3,15 +3,14 @@ import { onChange, useState } from "react";
 export default function Dropdown({ options }) {
   const [selectedOption, setSelectedOption] = useState(null);
 
-// export default function Dropdown({ options, onSelect }) {
-
+  // export default function Dropdown({ options, onSelect }) {
 
   // const [selectedOption, setSelectedOption] = useState(options[0]);
 
   const handleDropdownChange = (event) => {
     const selectedValue = event.target.value;
     setSelectedOption(selectedValue);
-    // onSelect(selectedValue); 
+    // onSelect(selectedValue);
   };
 
   return (
@@ -33,7 +32,9 @@ export default function Dropdown({ options }) {
         // onChange={onChange}
       >
         {options.map((option, index) => (
-          <option key={index} value={option}>{option}</option>
+          <option key={index} value={option}>
+            {option}
+          </option>
         ))}
       </select>
     </div>
