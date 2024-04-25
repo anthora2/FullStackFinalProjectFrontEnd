@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "../reportWebVitals";
 import Hero from "../components/Hero";
 import Details from "../components/Details";
-import FilterPage from "../components/FilterPage";
+// import FilterPage from "../components/FilterPage";
 
 function AboutPage() {
   return (
@@ -11,7 +11,7 @@ function AboutPage() {
       <Hero />
       <Details />
       {/* <SearchPage /> */}
-      <FilterPage />
+      {/* <FilterPage /> */}
     </div>
   );
 }

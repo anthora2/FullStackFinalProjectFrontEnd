@@ -5,8 +5,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Hero from "./components/Hero";
 import Details from "./components/Details";
-import SearchPage from "./components/SearchPage";
-import FilterPage from "./components/FilterPage";
 import HomePage from "../src/pages/HomePage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -15,7 +13,6 @@ root.render(
     {/* <Hero />
     <Details />
     {/* <SearchPage /> */}
-    {/* <FilterPage />  */}
     {/* <HomePage /> */}
     <App />
   </React.StrictMode>,

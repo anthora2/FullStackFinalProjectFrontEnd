@@ -1,11 +1,21 @@
 import React, { useState } from "react";
+import CommentsModal from "./CommentsModal";
 
 const ApartmentCard = ({ picture }) => {
+
+
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+	const [isModalOpen, setModalOpen] = useState(false);
+
 
   const toggleDialog = () => {
     setIsDialogOpen(!isDialogOpen);
   };
+
+	const toggleModal = () => {
+		setModalOpen(!isModalOpen);
+	}
 
   return (
     <div>
@@ -25,7 +35,7 @@ const ApartmentCard = ({ picture }) => {
             2520 Benvenue Ave
           </h2>
           <h4 className="text-gray-400 text-sm font-medium text-center pb-5">
-            View More Comments
+            See what people have to say ?
           </h4>
           <p className="pl-6 mb-2">
             <span className="font-bold">John Doe: </span>Dis apartment sick as
@@ -37,7 +47,7 @@ const ApartmentCard = ({ picture }) => {
       {/* Dialog/modal */}
       {isDialogOpen && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="relative w-1/3 h-2/3 bg-white rounded-lg shadow-lg">
+          <div className="relative w-1/3 h-11/12 bg-white rounded-lg shadow-lg">
             {/* Close button */}
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
@@ -66,6 +76,18 @@ const ApartmentCard = ({ picture }) => {
                 alt="Your Image"
                 className="w-full h-10/12 object-cover align-middle"
               />
+							<div className="flex flex-row justify-between">
+								<div className='pt-4 flex flex-row'>
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+										<path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"/>
+									</svg>
+									<p className="pl-1"> 0 </p>
+								</div>
+								<div className='pt-4 text-gray-500'>
+									comments: 12
+								</div>
+							</div>
+							
               <div className="border-t border-gray-300 mt-4 pt-4 flex justify-between items-center">
                 <div className="w-1/2 border-r border-gray-300 pr-2 text-center flex items-center justify-center">
                   <button className="text-blue-500 hover:text-blue-600 flex items-center">
@@ -97,9 +119,7 @@ const ApartmentCard = ({ picture }) => {
                     Comment
                   </button>
                 </div>
-                <div className="w-1/6 text-right">
-                  
-                </div>
+                <div className="w-1/6 text-right"></div>
               </div>
               <div className="mt-4 px-2 py-1 bg-gray-200 rounded-lg flex justify-between items-center">
                 <input
@@ -108,11 +128,31 @@ const ApartmentCard = ({ picture }) => {
                   className="w-full bg-transparent outline-none"
                 />
                 <button className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-full items-end">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
-  <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
-</svg>
-                  </button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-send"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" />
+                  </svg>
+                </button>
               </div>
+              <div className='pt-4'> 
+              	<h4 className="text-lg"> <span className="font-bold"> Cool guy </span> : this one was alright</h4>
+								<h4 className="text-lg"> <span className="font-bold"> John Doe </span> : dis website really cool !</h4>
+            	</div>
+							<button
+							onClick={toggleModal}
+							>
+
+								<h4 className="text-gray-500 font-bold hover:text-gray-200"> View All Comments </h4>
+							</button>
+							<CommentsModal isOpen={isModalOpen} onClose={toggleModal} />
+							
+              
             </div>
           </div>
         </div>
