@@ -8,7 +8,7 @@ const SearchBar = () => {
     setIsLoading(true);
 
     // Dummy API endpoint
-    const apiUrl = "https://jsonplaceholder.typicode.com/posts";
+    const apiUrl = "http://127.0.0.1:8000/hello/";
 
     // Make API call
     fetch(apiUrl, {
@@ -29,6 +29,8 @@ const SearchBar = () => {
         console.error("Error fetching data:", error);
         setIsLoading(false);
       });
+
+      
   };
 
   const handleChange = (event) => {
