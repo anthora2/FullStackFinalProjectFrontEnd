@@ -9,11 +9,9 @@ import MyLoginComponent from "./LogIn";
 const navigation = [
   { name: "About", href: "#" },
   { name: "Listings", href: "#" },
-  { name: "Submit", href: "#" },
-  { name: "Login", href: "#" },
 ];
 
-export default function Hero() {
+export default function Hero({ isLoggedIn, onLoginSuccess }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -61,10 +59,7 @@ export default function Hero() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-white">
-              Log in <span aria-hidden="true">&rarr;</span>
-            </a>
-            <MyLoginComponent />
+            <MyLoginComponent onLoginSuccess={onLoginSuccess} />
           </div>
         </nav>
         <Dialog

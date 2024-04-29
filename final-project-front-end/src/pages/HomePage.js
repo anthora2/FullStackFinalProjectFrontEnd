@@ -1,19 +1,23 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import reportWebVitals from "../reportWebVitals";
+import React, { useState } from "react";
 import Hero from "../components/Hero";
 import Details from "../components/Details";
-import ApartmentCard from "../components/ApartmentCard";
-// import Dropdown from "../components/Dropdown";
 import ApartmentGrid from "../components/ApartmentGrid";
 
 function HomePage() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login status
+
+  // Handler for successful login
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true);
+  };
+
   return (
     <div>
-      <Hero />
+      {/* Pass login status and login success handler to Hero component */}
+      <Hero isLoggedIn={isLoggedIn} onLoginSuccess={handleLoginSuccess} />
       <Details />
-      {/* <SearchPage /> */}
-      <ApartmentGrid />
+      {/* Pass login status to ApartmentGrid component */}
+      {isLoggedIn && <ApartmentGrid isLoggedIn={isLoggedIn} />}
     </div>
   );
 }

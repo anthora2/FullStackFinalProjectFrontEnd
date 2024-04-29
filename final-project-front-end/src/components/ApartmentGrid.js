@@ -7,7 +7,7 @@ import SearchBar from "./SearchBar";
 function ApartmentGrid() {
   const [apartments, setApartments] = useState([]);
   const [history, setHistory] = useState("");
-  console.log(history)
+  console.log(history);
 
   //   useEffect(() => {
   //     // Fetch apartments from backend when the component mounts
@@ -27,9 +27,9 @@ function ApartmentGrid() {
   //       console.error('Error fetching apartments:', error);
   //     }
   //   };
-  
+
   const handleClick = async () => {
-    const apiUrl = "http://127.0.0.1:8000/members/"
+    const apiUrl = "http://127.0.0.1:8000/members/";
     fetch(apiUrl, {
       method: "GET",
       headers: {
@@ -39,10 +39,10 @@ function ApartmentGrid() {
       .then((response) => response.json())
       .then((data) => {
         // Handle API response
-        setHistory(data.output)
+        setHistory(data.output);
         console.log("API response:", data);
-      })
-  }
+      });
+  };
 
   return (
     <div
@@ -56,10 +56,20 @@ function ApartmentGrid() {
         </h1>
         <SearchBar />
         <div className="flex gap-5 mb-12">
-          <button className="bg-white p-2 rounded-full font-semibold hover:scale-[1.05] duration-200" onClick={handleClick}> Search History</button>
-          {history && <h1 className="bg-white p-2 rounded-full font-semibold">{ history}</h1>}
-          </div>
-        
+          <button
+            className="bg-white p-2 rounded-full font-semibold hover:scale-[1.05] duration-200"
+            onClick={handleClick}
+          >
+            {" "}
+            Search History
+          </button>
+          {history && (
+            <h1 className="bg-white p-2 rounded-full font-semibold">
+              {history}
+            </h1>
+          )}
+        </div>
+
         <div className="grid grid-cols-3 gap-x-32 gap-y-32">
           {/* Iterate over apartments array and render ApartmentCard for each
           {apartments.map((apartment, index) => (
