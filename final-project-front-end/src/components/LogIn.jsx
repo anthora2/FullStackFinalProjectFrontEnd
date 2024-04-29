@@ -20,7 +20,7 @@ function MyLoginComponent({ onLoginSuccess }) {
       <GoogleLogin
         onSuccess={responseMessage}
         onError={errorMessage}
-        hostedDomain="berkeley.edu"
+        hosted_domain="berkeley.edu"
       />
     </div>
   );
